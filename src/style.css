@@ -30,6 +30,15 @@ ul {
   padding: 0;
   }
 
+h2 {
+  text-decoration: underline;
+  text-decoration-color: #A89ECF;
+}
+
+p {
+  margin: 0 6rem 2rem 6rem;
+}
+
 
 a:link {
   color: #8C9CE4;
@@ -96,11 +105,11 @@ a:hover {
 .button {
   display: inline-block;
   margin: auto 10%;
-  max-width: 200px; height: auto;
+  max-width: 10rem; height: auto;
   border-color: #779AF6;
-  border-width: 10px;
+  border-width: 0.4rem;
   border-style: solid;
-  border-radius: 125px;
+  border-radius: 100%;
 }
 
 .button:hover {

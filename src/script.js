@@ -82,22 +82,22 @@ function highlight_button() {
   reset_button_bg();
   if (page == 1) {
     let element_button_12 = document.getElementById('button_1');
-    element_button_12.style.backgroundColor = '#ffcc00';
+    element_button_12.style.backgroundColor = '#779AF6';
   } else if (page == 2) {
     let element_button_22 = document.getElementById('button_2');
-    element_button_22.style.backgroundColor = '#ffcc00';
+    element_button_22.style.backgroundColor = '#8C9CE4';
   } else if (page == 3) {
     let element_button_32 = document.getElementById('button_3');
-    element_button_32.style.backgroundColor = '#ffcc00';
+    element_button_32.style.backgroundColor = '#A89ECF';
   } else if (page == 4) {
     let element_button_42 = document.getElementById('button_4');
-    element_button_42.style.backgroundColor = '#ffcc00';
+    element_button_42.style.backgroundColor = '#C7A1B7';
   } else if (page == 5) {
     let element_button_52 = document.getElementById('button_5');
-    element_button_52.style.backgroundColor = '#ffcc00';
+    element_button_52.style.backgroundColor = '#E7A3A1';
   } else {
     let element_button_62 = document.getElementById('button_6');
-    element_button_62.style.backgroundColor = '#ffcc00';
+    element_button_62.style.backgroundColor = '#E7A3A1';
   }
 }
 
