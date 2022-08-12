@@ -1,3 +1,136 @@
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+
+
+function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+
+
+
+var item, shopping_array, custom_item;
+
+// Describe this function...
+function reset_array() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  shopping_array = [];
+}
+
+// Describe this function...
+function reset_list() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_shopping_list = document.getElementById('shopping-list');
+  element_shopping_list.replaceChildren();
+}
+
+// Describe this function...
+function build_shopping_list() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  shopping_array.forEach((item) => {
+    let element_shopping_list2 = document.getElementById('shopping-list');
+    let new_li = document.createElement('li');
+    new_li.innerText = item;
+
+    new_li.addEventListener('click', (event) => {
+      new_li.setAttribute("class", 'strikethrough');
+
+    });
+    element_shopping_list2.appendChild(new_li);
+  });
+}
+
+// Describe this function...
+function reset_build_list() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  reset_list();
+  build_shopping_list();
+}
+
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
+
+
+reset_array();
+
+
+document.getElementById('btn-eggs').addEventListener('click', (event) => {
+  shopping_array.push('Eggs');
+  reset_build_list();
+
+});
+
+document.getElementById('btn-bacon').addEventListener('click', (event) => {
+  shopping_array.push('Bacon');
+  reset_build_list();
+
+});
+
+document.getElementById('btn-bread').addEventListener('click', (event) => {
+  shopping_array.push('Bread');
+  reset_build_list();
+
+});
+
+document.getElementById('btn-tom').addEventListener('click', (event) => {
+  shopping_array.push('Tomoatoes');
+  reset_build_list();
+
+});
+
+document.getElementById('btn-mush').addEventListener('click', (event) => {
+  shopping_array.push('Mushrooms');
+  reset_build_list();
+
+});
+
+document.getElementById('btn-hash').addEventListener('click', (event) => {
+  shopping_array.push('Hash brown');
+  reset_build_list();
+
+});
+
+document.getElementById('btn-remove').addEventListener('click', (event) => {
+  shopping_array.pop();
+  reset_build_list();
+
+});
+
+document.getElementById('btn-reset').addEventListener('click', (event) => {
+  reset_array();
+  reset_list();
+
+});
+
+document.getElementById('btn-other').addEventListener('click', (event) => {
+  custom_item = getNumberOrString(document.getElementById('input-ingredients').value);
+  if (custom_item != 0) {
+    shopping_array.push(getNumberOrString(document.getElementById('input-ingredients').value));
+    reset_build_list();
+  }
+
+});
+
 var url, text_cache, page, count, text, url_cache, temp_text, temp_url, item;
 
 // Describe this function...
@@ -153,5 +286,224 @@ document.getElementById('button_5').addEventListener('click', (event) => {
 document.getElementById('button_6').addEventListener('click', (event) => {
   page = 6;
   reset_build_show();
+
+});
+
+
+var item, total_cost_array, apple_cost_array, apple_count_array, coffee_count_var, total_count_array, orange_cost_array, apple_count_var, orange_count_array, orange_count_var, coffee_count_array, coffee_cost_array, egg_count_array, egg_count_var, bacon_count_array, bacon_count_var, egg_cost_array, bacon_cost_array, total_cost_var, total_count_var;
+
+// Describe this function...
+function reset_arrays() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  apple_cost_array = [];
+  orange_cost_array = [];
+  coffee_cost_array = [];
+  egg_cost_array = [];
+  bacon_cost_array = [];
+  total_cost_array = [];
+  total_count_array = [];
+}
+
+// Describe this function...
+function build_and_display_count() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  apple_count_array.forEach((item) => {
+    apple_cost_array.push(2.99);
+  });
+  if (apple_count_var >= 0) {
+    let element_apple_count = document.getElementById('apple-count');
+    element_apple_count.innerText = apple_count_var;
+  }
+  orange_count_array.forEach((item) => {
+    orange_cost_array.push(0.3);
+  });
+  if (orange_count_var >= 0) {
+    let element_orange_count = document.getElementById('orange-count');
+    element_orange_count.innerText = orange_count_var;
+  }
+  coffee_count_array.forEach((item) => {
+    coffee_cost_array.push(3.69);
+  });
+  if (coffee_count_var >= 0) {
+    let element_coffee_count = document.getElementById('coffee-count');
+    element_coffee_count.innerText = coffee_count_var;
+  }
+  egg_count_array.forEach((item) => {
+    egg_cost_array.push(2.29);
+  });
+  if (egg_count_var >= 0) {
+    let element_egg_count = document.getElementById('egg-count');
+    element_egg_count.innerText = egg_count_var;
+  }
+  bacon_count_array.forEach((item) => {
+    bacon_cost_array.push(4.39);
+  });
+  if (bacon_count_var >= 0) {
+    let element_bacon_count = document.getElementById('bacon-count');
+    element_bacon_count.innerText = bacon_count_var;
+  }
+  build_and_display_total();
+}
+
+// Describe this function...
+function reset_all() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  total_cost_array = [];
+  total_count_array = [];
+  apple_count_array = [];
+  apple_cost_array = [];
+  orange_count_array = [];
+  orange_cost_array = [];
+  coffee_count_array = [];
+  coffee_cost_array = [];
+  egg_count_array = [];
+  egg_cost_array = [];
+  bacon_count_array = [];
+  bacon_cost_array = [];
+}
+
+// Describe this function...
+function build_and_display_total() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  apple_cost_array.forEach((item) => {
+    total_cost_array.push(item);
+  });
+  apple_count_array.forEach((item) => {
+    total_count_array.push(item);
+  });
+  orange_cost_array.forEach((item) => {
+    total_cost_array.push(item);
+  });
+  orange_count_array.forEach((item) => {
+    total_count_array.push(item);
+  });
+  coffee_cost_array.forEach((item) => {
+    total_cost_array.push(item);
+  });
+  coffee_count_array.forEach((item) => {
+    total_count_array.push(item);
+  });
+  egg_cost_array.forEach((item) => {
+    total_cost_array.push(item);
+  });
+  egg_count_array.forEach((item) => {
+    total_count_array.push(item);
+  });
+  bacon_cost_array.forEach((item) => {
+    total_cost_array.push(item);
+  });
+  bacon_count_array.forEach((item) => {
+    total_count_array.push(item);
+  });
+  total_cost_var = total_cost_array.reduce((a,b) => a+b, 0);
+  total_count_var = total_count_array.reduce((a,b) => a+b, 0);
+  let element_count_total = document.getElementById('count-total');
+  element_count_total.innerText = total_count_var;
+  let element_cost_total = document.getElementById('cost-total');
+  element_cost_total.innerText = total_cost_var;
+}
+
+
+reset_all();
+
+
+document.getElementById('btn-apple-add').addEventListener('click', (event) => {
+  reset_arrays();
+  apple_count_array.push(1);
+  apple_count_var = (typeof apple_count_var === 'number' ? apple_count_var : 0) + 1;
+  build_and_display_count();
+
+});
+
+document.getElementById('btn-apple-sub').addEventListener('click', (event) => {
+  if (apple_count_var > 0) {
+    reset_arrays();
+    apple_count_array.pop();
+    apple_count_var = (typeof apple_count_var === 'number' ? apple_count_var : 0) + -1;
+    build_and_display_count();
+  }
+
+});
+
+document.getElementById('btn-orange-add').addEventListener('click', (event) => {
+  reset_arrays();
+  orange_count_array.push(1);
+  orange_count_var = (typeof orange_count_var === 'number' ? orange_count_var : 0) + 1;
+  build_and_display_count();
+
+});
+
+document.getElementById('btn-orange-sub').addEventListener('click', (event) => {
+  if (orange_count_var > 0) {
+    reset_arrays();
+    orange_count_array.pop();
+    orange_count_var = (typeof orange_count_var === 'number' ? orange_count_var : 0) + -1;
+    build_and_display_count();
+  }
+
+});
+
+document.getElementById('btn-coffee-add').addEventListener('click', (event) => {
+  reset_arrays();
+  coffee_count_array.push(1);
+  coffee_count_var = (typeof coffee_count_var === 'number' ? coffee_count_var : 0) + 1;
+  build_and_display_count();
+
+});
+
+document.getElementById('btn-coffee-sub').addEventListener('click', (event) => {
+  if (coffee_count_var > 0) {
+    reset_arrays();
+    coffee_count_array.pop();
+    coffee_count_var = (typeof coffee_count_var === 'number' ? coffee_count_var : 0) + -1;
+    build_and_display_count();
+  }
+
+});
+
+document.getElementById('btn-egg-add').addEventListener('click', (event) => {
+  reset_arrays();
+  egg_count_array.push(1);
+  egg_count_var = (typeof egg_count_var === 'number' ? egg_count_var : 0) + 1;
+  build_and_display_count();
+
+});
+
+document.getElementById('btn-egg-sub').addEventListener('click', (event) => {
+  if (egg_count_var > 0) {
+    reset_arrays();
+    egg_count_array.pop();
+    egg_count_var = (typeof egg_count_var === 'number' ? egg_count_var : 0) + -1;
+    build_and_display_count();
+  }
+
+});
+
+document.getElementById('btn-bacon-add').addEventListener('click', (event) => {
+  reset_arrays();
+  bacon_count_array.push(1);
+  bacon_count_var = (typeof bacon_count_var === 'number' ? bacon_count_var : 0) + 1;
+  build_and_display_count();
+
+});
+
+document.getElementById('btn-bacon-sub').addEventListener('click', (event) => {
+  if (bacon_count_var > 0) {
+    reset_arrays();
+    bacon_count_array.pop();
+    bacon_count_var = (typeof bacon_count_var === 'number' ? bacon_count_var : 0) + -1;
+    build_and_display_count();
+  }
+
+});
+
+document.getElementById('btn-reset2').addEventListener('click', (event) => {
+  reset_all();
+  coffee_count_var = 0;
+  apple_count_var = 0;
+  orange_count_var = 0;
+  egg_count_var = 0;
+  bacon_count_var = 0;
+  build_and_display_count();
 
 });

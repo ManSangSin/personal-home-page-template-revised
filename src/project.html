@@ -1,0 +1,201 @@
+<!-- =================
+  WRITE YOUR HTML HERE
+
+You only need to write the HTML that goes inside the <body> tag. To add things to the <head>, click the ⚙️ 
+   ===================
+-->
+
+<!--- All the tests are red! You have to make them green. 
+
+Q How do you make the tests pass?
+A Meet the requirements!
+
+Make the first test pass by adding a <header> </header>-->
+<HTML>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      </head> 
+    <header id="header" class="c-site-header">
+        <div>
+            <nav id="nav-bar" aria-label="Main Site Links.">
+                <ul id="nav-links">
+                    <li class="nav-button"><a href="#section-user">User Stories</a></li>
+                    <li class="nav-button"><a href="#section-shopping-list">Shopping List</a></li>
+                    <li class="nav-button"><a href="#section-shopping-cart">Shopping Cart</a></li>
+                    <li class="nav-button"><a href="#section-story">Story Book</a></li>
+                    <li><div class="dropdown">
+                        <button class="dropbtn">Select Page</button>
+                        <div class="dropdown-content">
+                          <a href="./index.html">Home</a>
+                          <a href="./project.html">Projects</a>
+                        </div>
+                      </div></li>
+                </ul>
+            </nav>
+            <div class="divider-top"></div>
+        <div>
+            <a class="material-icons" id="btn-menu">menu</a>
+        </div>
+    
+    </header>
+    <main>
+        
+
+        <div>
+    
+            <h2 id="section-user">User Stories</h2>
+            <h3>Shopping List</h3>
+            <ol>
+                <li>As a user, I want to view a list of products so that I can select some to add to a list.</li>
+                <li>As a user, I want to be able to see a list of items I selected so I know what I need to buy.</li>
+                <li>As a user, I want to be able to remove the last item I added so that I don’t need to create a new list if I added an item by mistake.</li>
+                <li>As a user, I want to be able to add different (custom) items to a list as the default items may not have what I need to buy.</li>
+                <li>As a user, I want to be able to check off items which are on my list so that I know what items are bought and what still needs to be purchased.</li>
+            </ol>
+            <br>
+            <h3>Shopping Basket</h3>
+            <ol>
+                <li>As a shopper, I want to be able to see a list of products so I can select what I want to buy.</li>
+                <li>As a shopper, I want to be able to see how many of each product is in my basket so I can buy the amount I require.</li>
+                <li>As a shopper, I want to be able to see the total cost so I know how much to pay.</li>
+                <li>As a shopper, I want to see the price of the product so I can decide if the price is right and worth buying.</li>
+                <li>As a shopper, I want to easily empty my basket if I choose I do not want to proceed with the purchase anymore.</li>
+            </ol>
+
+            <br>
+            
+            <h3>Comment Section</h3>
+            <ol>
+                <li>As a user, I want to be able to review what I write before I submit my comments so I can see if it reads correctly.</li>
+                <li>As a user, I want to be able to remove my comments if I submit something by mistake.</li>
+                <li>As a user, I want to be able to see other peoples comment so I know what people are saying and find out more relevent information.</li>
+            </ol>
+            
+        </div>
+        <div class="divider"></div>
+        <div>
+            <h2 id="section-shopping-list">Project: Shopping List</h2>
+            <div  style="display: flex; justify-content: center;">
+                <div class="section">
+                    <h2>List of products</h2>
+                    <ul id="products">
+                    <li class="flex-list">Eggs <button id="btn-eggs">Add to list</button></li> 
+                    <li class="flex-list"><span>Bacon</span> <span><button id="btn-bacon">Add to list</button></span></li>
+                    <li class="flex-list"><span>Bread</span> <span><button id="btn-bread">Add to list</button></span></li>
+                    <li class="flex-list"><span>Tomatoes</span> <span><button id="btn-tom">Add to list</button></span></li>
+                    <li class="flex-list"><span>Mushrooms</span> <span><button id="btn-mush">Add to list</button></span></li>
+                    <li class="flex-list"><span>Hash brown</span> <span><button id="btn-hash">Add to list</button></span></li>
+                    <li class="flex-list"><span><input type="text" placeholder="Enter product name..." id="input-ingredients"></input></span> <span><button id="btn-other">Add to list</button></span></li> 
+                    </ul>
+                </div>
+                <div class="section">
+                    <h2>Shopping List</h2>
+                    <i>(Click item to strike off)</i>
+                    <ol id="shopping-list"></ol>
+                        <div class="center">
+                            <button id="btn-remove">Remove Last</button>
+                            <button id="btn-reset">Reset</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    
+
+
+    <div class="divider"></div>
+    <div id="section-shopping-cart">
+        <h2>Shopping Cart</h2>
+
+        <div>    
+            <div class="container-product">
+            <h3>Shopping Cart</h3>
+            <button class="Action" id="btn-reset2">Remove all</button>
+            </div>
+            
+            <div class="container-product">
+            <div>Product</div>
+            <div>Quantity</div>
+            <div>Price</div>
+            </div>
+            <br>
+            <div class="container-product">
+            <div>Apple Juice</div>
+            <div style="position: relative; left: -1.1rem;"><button id="btn-apple-sub">-</button><span id="apple-count"  style="margin-left: 2rem;margin-right: 2rem;">0</span><button id="btn-apple-add">+</button></div>
+            <div class="prices">2.99</div>
+            </div>
+            
+            <div class="container-product">
+            <div>Orange</div>
+            <div style="position: relative; left: -0.2rem;"><button id="btn-orange-sub">-</button><span id="orange-count"  style="margin-left: 2rem;margin-right: 2rem;">0</span><button id="btn-orange-add">+</button></div>
+            <div class="prices">0.30</div>
+            </div>
+            
+            
+            
+            <div class="container-product">
+            <div>Coffee</div>
+            <div><button id="btn-coffee-sub">-</button><span id="coffee-count" style="margin-left: 2rem;margin-right: 2rem;">0</span><button id="btn-coffee-add">+</button></div>
+            <div class="prices">3.69</div>
+            </div>
+            <div class="container-product">
+            <div>Eggs (Large x6)</div>
+            <div style="position: relative; left: -1.98rem;"><button id="btn-egg-sub">-</button><span id="egg-count" style="margin-left: 2rem;margin-right: 2rem;">0</span><button id="btn-egg-add">+</button></div>
+            <div class="prices">2.29</div>
+            </div>
+            <div class="container-product">
+            <div>Bacon</div>
+            <div ><button id="btn-bacon-sub">-</button><span id="bacon-count" style="margin-left: 2rem;margin-right: 2rem;">0</span><button id="btn-bacon-add">+</button></div>
+            <div class="prices">4.39</div>
+            </div>
+            <br>
+            
+            <br>
+            
+            <div class="container-total">
+            <div>Item(s)</div>
+            <div>Sub-Total</div>
+            </div>
+            
+            <div class="container-total">
+            <div id="count-total">0</div>
+            <div id="cost-total">0</div>
+            </div>
+            
+            <button id="btn-checkout">Checkout</button>
+
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div id="section-story">
+        <h2>Story Book</h2>
+        <img id="image" src="" width=600px height=600px>
+<div id="storyline" style="text-align: center;">test</div>
+<br>
+<div style="display: flex; justify-content: center;">
+    <button id="button_prev">< Prev</button>
+    <div>
+        <button id="button_1">page 1</button>
+        <button id="button_2">page 2</button>
+        <button id="button_3">page 3</button>
+        <button id="button_4">page 4</button>
+        <button id="button_5">page 5</button>
+        <button id="button_6">page 6</button>
+    </div>
+    <button id="button_next" style="float: right;">Next ></button>
+</div>
+    <br>
+    <br>
+    <br>
+        
+    </main>
+    <footer class="c-site-footer"></footer>
+    
+    <!-- Your test console.
+    Don't delete!-->
+    <aside id="tests" aria-label="Test Readout." aria-live="polite" style="overflow:auto">
+    </aside>
+    
+    <script src="script.js"></script>
+    </HTML>
