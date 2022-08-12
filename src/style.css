@@ -70,7 +70,7 @@ a:link {
   }
 
 a:visited {
-  color: var(--color4);
+  color: var(--color3);
   background-color: transparent;
   text-decoration: none;
 }

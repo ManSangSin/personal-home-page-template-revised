@@ -507,3 +507,26 @@ document.getElementById('btn-reset2').addEventListener('click', (event) => {
   build_and_display_count();
 
 });
+
+
+var link2;
+
+
+link2 = ['https://images.unsplash.com/photo-1659534016030-ca148b74205b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80', 'https://images.unsplash.com/photo-1659424864086-468b4eaa57bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1527&q=80', 'https://images.unsplash.com/photo-1659464797962-62a9b8324abc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'];
+let element_image_carousel2 = document.getElementById('image-carousel2');
+element_image_carousel2.setAttribute("src", link2[0]);
+
+
+document.getElementById('btn-next2').addEventListener('click', (event) => {
+  link2.push(link2.shift());
+  let element_image_carousel22 = document.getElementById('image-carousel2');
+  element_image_carousel22.setAttribute("src", link2[0]);
+
+});
+
+document.getElementById('btn-prev2').addEventListener('click', (event) => {
+  link2.unshift(link2.pop());
+  let element_image_carousel23 = document.getElementById('image-carousel2');
+  element_image_carousel23.setAttribute("src", link2[0]);
+
+});
